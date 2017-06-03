@@ -1,0 +1,19 @@
+{
+  "name": "Unicornio",
+  "description": "Unicornio adivinhador de emocao",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angularfire": "^2.3.0",
+    "angular-ui-router": "^1.0.3"
+  }
+}
