@@ -3,7 +3,7 @@
   "description": "Unicornio adivinhador de emocao",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/AqueleCaraLa/UnicornioAdivinha",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,6 +14,10 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angularfire": "^2.3.0",
-    "angular-ui-router": "^1.0.3"
-  }
+    "angular-ui-router": "^1.0.3",
+    "jquery": "^3.2.1"
+  },
+  "authors": [
+    "Jonathan Santos <jonathan.santosaugusto@gmail.com>"
+  ]
 }

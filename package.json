@@ -1,0 +1,24 @@
+{
+  "name": "unicornioadivinha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AqueleCaraLa/UnicornioAdivinha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AqueleCaraLa/UnicornioAdivinha/issues"
+  },
+  "homepage": "https://github.com/AqueleCaraLa/UnicornioAdivinha#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
