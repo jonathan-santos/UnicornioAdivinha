@@ -59,9 +59,9 @@ body {
 
 .start{
     margin-top: 10%;
+    margin-bottom: 10%;
     background-color: #331e54;
     color: white;
-    height: 400px;
     font-size: 25px;
     padding: 0;
     text-align: center;
@@ -69,6 +69,7 @@ body {
 
 .start form{
     padding: 10%;
+    padding-bottom: 0;
 }
 
 .comecar{
