@@ -353,25 +353,25 @@ angular.module('unicornio', ['firebase','ui.router']);
 angular.module('unicornio').config(rotas);
 
 function rotas($stateProvider, $urlRouterProvider) {
-    $stateProvider.state('template0', {
+    $stateProvider.state('apresentacao', {
         templateUrl: 'templates/template0.html',
         controller: 'Template0Controller',
         url: '/apresentacao'
     });
 
-    $stateProvider.state('template1', {
+    $stateProvider.state('introducao', {
         templateUrl: 'templates/template1.html',
         controller: 'Template1Controller',
         url: '/introducao'
     });
 
-    $stateProvider.state('template2', {
+    $stateProvider.state('le-emocao', {
         templateUrl: 'templates/template2.html',
         controller: 'Template2Controller',
         url: '/le-emocao'
     });
 
-    $stateProvider.state('template3', {
+    $stateProvider.state('resultado', {
         templateUrl: 'templates/template3.html',
         controller: 'Template3Controller',
         url: '/resultado'
@@ -383,7 +383,9 @@ function rotas($stateProvider, $urlRouterProvider) {
 angular.module('unicornio').controller('Template0Controller', Template0Controller)
 
 function Template0Controller($scope,$firebaseArray,$state) {
-
+    $scope.comecar = function() {
+        $state.go('introducao')
+    }
 }
 
 angular.module('unicornio').controller('Template1Controller', Template1Controller)
