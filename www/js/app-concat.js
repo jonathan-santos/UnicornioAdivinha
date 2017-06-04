@@ -356,50 +356,63 @@ function rotas($stateProvider, $urlRouterProvider) {
     $stateProvider.state('template0', {
         templateUrl: 'templates/template0.html',
         controller: 'Template0Controller',
-        url: '/template0'
+        url: '/apresentacao'
     });
 
     $stateProvider.state('template1', {
         templateUrl: 'templates/template1.html',
         controller: 'Template1Controller',
-        url: '/template1'
+        url: '/introducao'
     });
 
     $stateProvider.state('template2', {
         templateUrl: 'templates/template2.html',
         controller: 'Template2Controller',
-        url: '/template2'
+        url: '/le-emocao'
     });
 
     $stateProvider.state('template3', {
         templateUrl: 'templates/template3.html',
         controller: 'Template3Controller',
-        url: '/template3'
+        url: '/resultado'
     });
 
-    $urlRouterProvider.otherwise('/template0');
+    $urlRouterProvider.otherwise('/apresentacao'); 
 }
 
 angular.module('unicornio').controller('Template0Controller', Template0Controller)
 
 function Template0Controller($scope,$firebaseArray,$state) {
-    console.log('template0');
+
 }
 
 angular.module('unicornio').controller('Template1Controller', Template1Controller)
 
 function Template1Controller($scope,$firebaseArray,$state) {
-    console.log('template1');
+    
 }
 
 angular.module('unicornio').controller('Template2Controller', Template2Controller)
 
 function Template2Controller($scope,$firebaseArray,$state) {
-    console.log('template2');
+
 }
 
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
-function Template3Controller($scope,$firebaseArray,$state) {
-    console.log('template3');
+function Template3Controller($scope,$firebaseArray,$state,$http) {
+    $scope.quote = null;
+
+    var parametros = {
+        Method: 'GET',
+        url: 'http://www.quotzzy.co/api/quote'
+    }
+
+    $http(parametros).then(function(resposta) {
+        $scope.quote = resposta.data.text;
+        $scope.author = resposta.data.author.name;
+    }, function() {
+        $scope.erro = true;
+        $scope.quote = '';
+    });
 }
