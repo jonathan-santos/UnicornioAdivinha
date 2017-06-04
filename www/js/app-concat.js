@@ -355,6 +355,23 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 angular.module('unicornio', ['firebase','ui.router']);
 
+angular.module('unicornio').service('emotionApiService', function(){
+    var resultadoApi = {};
+
+    var getResultadoApi = function(){
+            return resultadoApi;
+    };
+
+    var setResultadoApi = function(value){
+        console.log("Resultado setado");
+        resultadoApi = value;
+    };
+
+    return {
+        GetResultadoApi: getResultadoApi,      
+        SetResultadoApi: setResultadoApi
+    };
+});
 angular.module('unicornio').config(rotas);
 
 function rotas($stateProvider, $urlRouterProvider) {
@@ -399,9 +416,9 @@ function Template1Controller($scope,$firebaseArray,$state) {
 
 angular.module('unicornio').controller('Template2Controller', Template2Controller)
 
-function Template2Controller($scope,$firebaseArray,$state) {
+function Template2Controller($scope,$firebaseArray,$state, emotionApiService) {
 
-    $scope.url = "http://farm1.static.flickr.com/121/315138140_234d62d9aa.jpg";
+    $scope.url = "";
 
     $scope.enviar = function(){
         $.ajax({
@@ -415,19 +432,20 @@ function Template2Controller($scope,$firebaseArray,$state) {
             data: "{ url: '" + $scope.url + "' }",
         })
         .done(function(data) {
-            console.log("success");
-            console.log(data);
+            emotionApiService.SetResultadoApi(data);
         })
         .fail(function() {
-            console.log("error");
+            alert("Houve um problema durante a leitura de sua foto, tente novamente ou envie outra foto para mim.")
         });
     };
 
 }
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
-function Template3Controller($scope,$firebaseArray,$state,$http) {
+function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
     $scope.quote = null;
+
+    console.log(emotionApiService.GetResultadoApi());
 
     var parametros = {
         Method: 'GET',

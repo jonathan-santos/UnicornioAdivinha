@@ -1,8 +1,8 @@
 angular.module('unicornio').controller('Template2Controller', Template2Controller)
 
-function Template2Controller($scope,$firebaseArray,$state) {
+function Template2Controller($scope,$firebaseArray,$state, emotionApiService) {
 
-    $scope.url = "http://farm1.static.flickr.com/121/315138140_234d62d9aa.jpg";
+    $scope.url = "";
 
     $scope.enviar = function(){
         $.ajax({
@@ -16,11 +16,10 @@ function Template2Controller($scope,$firebaseArray,$state) {
             data: "{ url: '" + $scope.url + "' }",
         })
         .done(function(data) {
-            console.log("success");
-            console.log(data);
+            emotionApiService.SetResultadoApi(data);
         })
         .fail(function() {
-            console.log("error");
+            alert("Houve um problema durante a leitura de sua foto, tente novamente ou envie outra foto para mim.")
         });
     };
 

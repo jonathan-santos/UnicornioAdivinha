@@ -1,7 +1,9 @@
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
-function Template3Controller($scope,$firebaseArray,$state,$http) {
+function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
     $scope.quote = null;
+
+    console.log(emotionApiService.GetResultadoApi());
 
     var parametros = {
         Method: 'GET',
