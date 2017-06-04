@@ -377,7 +377,7 @@ function rotas($stateProvider, $urlRouterProvider) {
         url: '/resultado'
     });
 
-    $urlRouterProvider.otherwise('/apresentacao'); 
+    $urlRouterProvider.otherwise('/index');
 }
 
 angular.module('unicornio').controller('Template0Controller', Template0Controller)

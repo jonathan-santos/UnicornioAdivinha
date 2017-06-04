@@ -2,7 +2,21 @@ body {
   background-color: #4c3470;
 }
 
+.titulo-principal{
+    text-align: center;
+}
+
+.titulo-principal .logo{
+    margin-top: 10px;
+}
+
 .logoimg {
   width: 124px;
-  align: center;
+}
+
+
+.titulo-principal .titulo{
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #ffece0;
 }
