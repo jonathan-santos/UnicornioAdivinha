@@ -1,6 +1,6 @@
 body {
-  background-color: #4c3470;
-  font-family: 'Comfortaa', cursive;
+    background-color: #4c3470;
+    font-family: 'Comfortaa', cursive;
 }
 
 .titulo-principal{
@@ -12,7 +12,7 @@ body {
 }
 
 .logoimg {
-  width: 124px;
+    width: 124px;
 }
 
 
@@ -24,45 +24,57 @@ body {
 
 
 .passos{
-  margin-top: 10%;
-  margin-left: 10px;
-  }
+    margin-top: 10%;
+    text-align: center;
+    display: flex;
+}
 
+.meio{
+    text-align: center;
+}
 
 .numbers{
-  color: white;
-  background-color: #331e54;
-  border-radius: 100%;
-  width: 50px;
-  height:50px;
-  text-align: center;
-  padding-top:10px;
-  font-size: 20px;
+    color: white;
+    background-color: #331e54;
+    border-radius: 100%;
+    width: 50px;
+    min-width: 50px;
+    height:50px;
+    text-align: center;
+    padding-top:10px;
+    font-size: 20px;
+}
 
+.active-number{
+    background-color: #ffece0;
+    color: #331e54;
 }
 
 .line{
-  border: 1px solid #331e54;
-  background-color: #331e54;
-  margin: 20px 0 20px 0;
+    border: 1px solid #331e54;
+    background-color: #331e54;
+    margin: 25px 0 25px 0;
+    width: 100%;
 }
 
 .start{
-  margin-top: 10%;
-  background-color: #331e54;
-  color: white;
-  height: 400px;
-  font-size: 25px;
-  padding: 10%;
-  margin-left: 5px;
+    margin-top: 10%;
+    background-color: #331e54;
+    color: white;
+    height: 400px;
+    font-size: 25px;
+    padding: 0;
+    text-align: center;
+}
+
+.start form{
+    padding: 10%;
 }
 
 .comecar{
-  opacity: 0.5;
-  margin: 10%;
-  background-color: #331e54;
-  color: white;
-  border: 0.5px solid white;
-
-
+    opacity: 0.5;
+    margin: 10%;
+    background-color: #331e54;
+    color: white;
+    border: 0.5px solid white;
 }

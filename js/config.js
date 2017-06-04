@@ -25,5 +25,5 @@ function rotas($stateProvider, $urlRouterProvider) {
         url: '/resultado'
     });
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/apresentacao');
 }
