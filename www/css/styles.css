@@ -22,13 +22,47 @@ body {
     color: #ffece0;
 }
 
-.numberCircle {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    background: #331e54;
-    text-align: center;
-    font: 15px Arial, sans-serif;
-    display: inline-block;
+
+.passos{
+  margin-top: 10%;
+  margin-left: 10px;
+  }
+
+
+.numbers{
+  color: white;
+  background-color: #331e54;
+  border-radius: 100%;
+  width: 50px;
+  height:50px;
+  text-align: center;
+  padding-top:10px;
+  font-size: 20px;
+
+}
+
+.line{
+  border: 1px solid #331e54;
+  background-color: #331e54;
+  margin: 20px 0 20px 0;
+}
+
+.start{
+  margin-top: 10%;
+  background-color: #331e54;
+  color: white;
+  height: 400px;
+  font-size: 25px;
+  padding: 10%;
+  margin-left: 5px;
+}
+
+.comecar{
+  opacity: 0.5;
+  margin: 10%;
+  background-color: #331e54;
+  color: white;
+  border: 0.5px solid white;
+
+
 }
