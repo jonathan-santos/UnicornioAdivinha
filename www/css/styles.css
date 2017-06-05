@@ -79,3 +79,36 @@ body {
     color: white;
     border: 0.5px solid white;
 }
+
+.enviar{
+    opacity: 0.5;
+    margin: 10%;
+    background-color: #331e54;
+    color: white;
+    border: 0.5px solid white;
+}
+
+.botoes-foto .enviado{
+    float: left;
+}
+
+.continuar{
+    opacity: 0.5;
+    margin: 10%;
+    background-color: #331e54;
+    color: white;
+    border: 0.5px solid white;
+    float: right;
+}
+
+.resultado .sentimento{
+    font-size: 32px;
+}
+
+.reiniciar{
+    opacity: 0.5;
+    margin: 10%;
+    background-color: #331e54;
+    color: white;
+    border: 0.5px solid white;
+}

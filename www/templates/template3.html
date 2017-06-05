@@ -9,17 +9,25 @@
         <div class="col-sm-2"></div>
     </div>
 
-    <div class="resultado-total">
-        <div class="resultado">
+    <div class="start col-xs-12">
+        <form>
+            <div class="resultado-total">
+                <div class="resultado">
+                    <p>O sentimento <span class="sentimento">{{maiorEmocao}}</span> foi relevado!</p>
 
-        </div>
-        <div class="mensagem-inspiradora">
-            <div class="mensagem">
-                {{quote}}
+                </div>
+                <div class="mensagem-inspiradora">
+                    <div class="mensagem">
+                        "{{quote}}"
+                    </div>
+                    <div class="autor">
+                        - {{author}}
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <button ng-click="reiniciar()" class="btn btn-sucess reiniciar">Reiniciar</button>
+                </div>
             </div>
-            <div class="autor">
-                {{author}}
-            </div>
-        </div>
+        </form>
     </div>
 </section>
