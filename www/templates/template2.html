@@ -11,11 +11,16 @@
 
     <div class="start col-xs-12">
         <form>
-            <input type="text" ng-model="url" placeholder="url da imagem" class="form-control input">
+            <div class="row">
+                <input type="text" ng-model="url" placeholder="url da imagem" class="form-control input col">
+            </div>
             <div class="col-xs-12 botoes-foto">
                 <button ng-click="enviar()" class="btn btn-default enviar" ng-class="{'enviado':enviado}">Enviar foto</button>
 
                 <button ng-click="continuar()" class="btn btn-sucess continuar" ng-show="enviado">Continuar</button>
+            </div>
+            <div class="row img-carregada">
+                <img ng-src="{{url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
             </div>
         </form>
     </div>

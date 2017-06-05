@@ -358,7 +358,6 @@ angular.module('unicornio').service('emotionApiService', function(){
     };
 
     var setResultadoApi = function(value){
-        console.log("Resultado setado");
         resultadoApi = value;
     };
 
@@ -421,7 +420,15 @@ function Template2Controller($scope,$firebaseArray,$state,$http, emotionApiServi
 
     $scope.enviar = function(){
 
-        $http({
+        if($scope.url == "")
+        {
+            alert("Por favor preencha o campo de link da imagem");
+            return;
+        }
+ 
+        else
+        {
+            $http({
             method: 'POST',
             url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
             headers: {
@@ -429,12 +436,13 @@ function Template2Controller($scope,$firebaseArray,$state,$http, emotionApiServi
                 'Ocp-Apim-Subscription-Key': 'cefd8a4df9284c0eb966f96999b1d67a'
             },
             data: "{ url: '" + $scope.url + "' }"
-        }).then(function(respostaSucesso){
-            emotionApiService.SetResultadoApi(respostaSucesso.data[0]);
-            $scope.enviado = true;
-        }, function(respostaErro){
-            console.log("Resposta erro: " + respostaErro);
-        });
+            }).then(function(respostaSucesso){
+                emotionApiService.SetResultadoApi(respostaSucesso.data[0]);
+                $scope.enviado = true;
+            }, function(respostaErro){
+                alert("Houve um erro na leitura de sua foto, por favor tente novamente ou envie outra foto.");
+            });
+        }
     };
 
     $scope.enviado = false;
@@ -443,6 +451,7 @@ function Template2Controller($scope,$firebaseArray,$state,$http, emotionApiServi
         $state.go("resultado");
     };
 }
+
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
 function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
@@ -483,21 +492,17 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
         }
     ];
 
-    $scope.maiorEmocao = 1;
+    $scope.maiorEmocao = 0;
     $scope.quote = null;
-    var a = 0;
 
     function encontrarSentimento() {
-        if ($scope.maiorEmocao >= $scope.sentimentos[a].valor) {
-            $scope.maiorEmocao = $scope.sentimentos[a].sentimento;
-            console.log($scope.maiorEmocao);
-            a+=1;
-            if (a==8) {
-                return
+        for (var i = 0; i < 8; i++) {
+            if ($scope.maiorEmocao <= $scope.sentimentos[i].valor) {
+                $scope.maiorEmocao = $scope.sentimentos[i].valor;
+                $scope.sentimento = $scope.sentimentos[i].sentimento;
             }
         }
     }
-
     encontrarSentimento();
 
     var parametros = {
@@ -516,4 +521,5 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
     $scope.reiniciar = function() {
         $state.go('apresentacao');
     }
+
 }

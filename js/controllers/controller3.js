@@ -38,21 +38,17 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
         }
     ];
 
-    $scope.maiorEmocao = 1;
+    $scope.maiorEmocao = 0;
     $scope.quote = null;
-    var a = 0;
 
     function encontrarSentimento() {
-        if ($scope.maiorEmocao >= $scope.sentimentos[a].valor) {
-            $scope.maiorEmocao = $scope.sentimentos[a].sentimento;
-            console.log($scope.maiorEmocao);
-            a+=1;
-            if (a==8) {
-                return
+        for (var i = 0; i < 8; i++) {
+            if ($scope.maiorEmocao <= $scope.sentimentos[i].valor) {
+                $scope.maiorEmocao = $scope.sentimentos[i].valor;
+                $scope.sentimento = $scope.sentimentos[i].sentimento;
             }
         }
     }
-
     encontrarSentimento();
 
     var parametros = {
@@ -71,4 +67,5 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
     $scope.reiniciar = function() {
         $state.go('apresentacao');
     }
+
 }
