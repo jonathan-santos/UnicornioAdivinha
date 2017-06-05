@@ -8,7 +8,6 @@ angular.module('unicornio').service('emotionApiService', function(){
     };
 
     var setResultadoApi = function(value){
-        console.log("Resultado setado");
         resultadoApi = value;
     };
 
