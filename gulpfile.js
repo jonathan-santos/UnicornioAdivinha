@@ -9,7 +9,7 @@ var paths = [
     'js/**/*'
 ]
 
-gulp.task('scripts', function() {
+gulp.task('default', function() {
     return gulp.src(paths)
         .pipe(concat('app-concat.js'))
         .pipe(gulp.dest('./www/js'))

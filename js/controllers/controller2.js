@@ -16,10 +16,10 @@ function Template2Controller($scope,$firebaseArray,$state,$http, emotionApiServi
         {
             $http({
             method: 'POST',
-            url: 'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
+            url: 'https://UnicornioAdivinha.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=emotion&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01',
             headers: {
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'cefd8a4df9284c0eb966f96999b1d67a'
+                'Ocp-Apim-Subscription-Key': '25ced731f0c34226aa8fcf40b92f2873'
             },
             data: "{ url: '" + $scope.url + "' }"
             }).then(function(respostaSucesso){

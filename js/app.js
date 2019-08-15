@@ -4,7 +4,7 @@ angular.module('unicornio').service('emotionApiService', function(){
     var resultadoApi = {};
 
     var getResultadoApi = function(){
-            return resultadoApi;
+        return resultadoApi;
     };
 
     var setResultadoApi = function(value){

@@ -1,40 +1,42 @@
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
 function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
-    var resultado = emotionApiService.GetResultadoApi();
+    console.log(emotionApiService.GetResultadoApi())
+    var resultadoApi = emotionApiService.GetResultadoApi();
+    var resultado = resultadoApi.faceAttributes.emotion
 
     $scope.sentimentos = [
         {
             sentimento: 'raiva',
-            valor: resultado.scores.anger
+            valor: resultado.anger
         },
         {
             sentimento: 'desprezo',
-            valor: resultado.scores.contempt
+            valor: resultado.contempt
         },
         {
             sentimento: 'nojo',
-            valor: resultado.scores.disgust
+            valor: resultado.disgust
         },
         {
             sentimento: 'medo',
-            valor: resultado.scores.fear
+            valor: resultado.fear
         },
         {
             sentimento: 'felicidade',
-            valor: resultado.scores.happiness
+            valor: resultado.happiness
         },
         {
             sentimento: 'neutro',
-            valor: resultado.scores.neutral
+            valor: resultado.neutral
         },
         {
             sentimento: 'tristeza',
-            valor: resultado.scores.sadness
+            valor: resultado.sadness
         },
         {
             sentimento: 'surpresa',
-            valor: resultado.scores.surprise
+            valor: resultado.surprise
         }
     ];
 
