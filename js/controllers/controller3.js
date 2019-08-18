@@ -1,6 +1,17 @@
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
 function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
+    $http({
+        Method: 'GET',
+        url: 'https://api.quotable.io/random'
+    }).then(function(resposta) {
+        $scope.quote = resposta.data.content;
+        $scope.author = resposta.data.author;
+    }, function() {
+        $scope.erro = true;
+        $scope.quote = '';
+    });
+
     var resultadoApi = emotionApiService.GetResultadoApi();
     var resultado = resultadoApi.faceAttributes.emotion
 
@@ -55,19 +66,6 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
 
     document.body.classList.add($scope.sentimento);
     document.querySelector('.caixa-resultado').classList.add($scope.sentimento);
-
-    var parametros = {
-        Method: 'GET',
-        url: 'https://api.quotable.io/random'
-    }
-
-    $http(parametros).then(function(resposta) {
-        $scope.quote = resposta.data.content;
-        $scope.author = resposta.data.author;
-    }, function() {
-        $scope.erro = true;
-        $scope.quote = '';
-    });
 
     $scope.reiniciar = function() {
         document.body.classList.remove($scope.sentimento);

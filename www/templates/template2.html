@@ -12,21 +12,21 @@
     <div class="start col-xs-12">
         <form>
             <div class="row">
-                <label for="url-imagem">Link imagem</label>
+                <label for="url-imagem">Link Foto</label>
                 <input id="url-imagem" type="text" ng-model="url" placeholder="url da imagem" class="form-control input col">
             </div>
             ou
             <div class="row">
-                <label for="arquivo-imagem">Arquivo foto</label>
-                <input id="arquivo-imagem" type="file" ng-model="arquivo" placeholder="arquivo da imagem" class="form-control input col">
+                <label for="arquivo-imagem">Arquivo Foto</label>
+                <input id="arquivo-imagem" type="file" accept="image/*" capture="user" ng-model="arquivo" placeholder="arquivo da imagem" class="form-control input col">
             </div>
             <div class="col-xs-12 botoes-foto">
-                <button ng-click="enviar()" class="btn btn-default enviar" ng-class="{'enviado':enviado}">Enviar foto</button>
-
+                <button ng-click="enviar()" class="btn btn-default enviar" ng-disabled="enviando">Enviar foto</button>
                 <button ng-click="continuar()" class="btn btn-sucess continuar" ng-show="enviado">Continuar</button>
             </div>
-            <div class="row img-carregada">
-                <img ng-src="{{url}}" alt="Imagem leitura" class="img-url" ng-show="enviado">
+            <div class="row img-carregada" ng-show="enviado">
+                <p>Foto selecionada</p>
+                <img ng-src="{{url}}" alt="Imagem leitura" class="img-url">
             </div>
         </form>
     </div>
