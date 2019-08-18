@@ -16,5 +16,5 @@ gulp.task('default', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch('js/**/*', ['scripts'])
+    gulp.watch('js/**/*', gulp.series(['default']))
 })

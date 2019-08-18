@@ -122,3 +122,68 @@ body {
     color: white;
     border: 0.5px solid white;
 }
+
+/* Sentimentos */
+body.raiva {
+    background-color: #ff1744;
+}
+
+.caixa-resultado.raiva {
+    background-color: #c4001d;
+}
+
+body.desprezo {
+    background-color: #ff9100;
+}
+
+.caixa-resultado.desprezo {
+    background-color: #c56200;
+}
+
+body.nojo {
+    background-color: #00c853;
+}
+
+.caixa-resultado.nojo {
+    background-color: #009624;
+}
+
+body.medo {
+    background-color: #d500f9;
+}
+
+.caixa-resultado.medo {
+    background-color: #9e00c5;
+}
+
+body.felicidade {
+    background-color: #ffff00;
+}
+
+.caixa-resultado.felicidade {
+    background-color: #c7cc00;
+}
+
+body.neutro {
+    background-color: #90a4ae;
+}
+
+.caixa-resultado.neutro {
+    background-color: #62757f;
+}
+
+body.tristeza {
+    background-color: #5c6bc0;
+}
+
+.caixa-resultado.tristeza {
+    background-color: #26418f;
+}
+
+body.surpresa {
+    background-color: #e040fb;
+}
+
+.caixa-resultado.surpresa {
+    background-color: #aa00c7;
+}

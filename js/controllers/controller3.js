@@ -1,7 +1,6 @@
 angular.module('unicornio').controller('Template3Controller', Template3Controller)
 
 function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiService) {
-    console.log(emotionApiService.GetResultadoApi())
     var resultadoApi = emotionApiService.GetResultadoApi();
     var resultado = resultadoApi.faceAttributes.emotion
 
@@ -51,23 +50,29 @@ function Template3Controller($scope,$firebaseArray,$state,$http,emotionApiServic
             }
         }
     }
+
     encontrarSentimento();
+
+    document.body.classList.add($scope.sentimento);
+    document.querySelector('.caixa-resultado').classList.add($scope.sentimento);
 
     var parametros = {
         Method: 'GET',
-        url: 'http://www.quotzzy.co/api/quote'
+        url: 'https://api.quotable.io/random'
     }
 
     $http(parametros).then(function(resposta) {
-        $scope.quote = resposta.data.text;
-        $scope.author = resposta.data.author.name;
+        $scope.quote = resposta.data.content;
+        $scope.author = resposta.data.author;
     }, function() {
         $scope.erro = true;
         $scope.quote = '';
     });
 
     $scope.reiniciar = function() {
-        $state.go('apresentacao');
+        document.body.classList.remove($scope.sentimento);
+        document.querySelector('.caixa-resultado').classList.remove($scope.sentimento);
+        $state.go('le-emocao');
     }
 
 }
