@@ -1,6 +1,8 @@
 # UnicornioAdivinha
 
-Como rodar 
+Projeto publicado em https://unicornioadivinha.herokuapp.com
+
+Como rodar:
 
 For Windows:
 
